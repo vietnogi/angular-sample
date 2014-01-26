@@ -1,0 +1,25 @@
+<div class="header">
+  <ul class="nav nav-pills pull-right">
+    <li class="active"><a ng-href="#">Home</a></li>
+    <li><a ng-href="#" title="Dosnt go anywhere ^.^">About</a></li>
+    <li><a ng-href="#" title="Dosnt go anywhere ^.^">Contact</a></li>
+  </ul>
+  <h3 class="text-muted">Vietnogi</h3>
+</div>
+
+<div class="jumbotron">
+  <select class="genres" ng-change="filterOut()" ng-model="genres">
+    <option value="">Select a genre&hellip;</option>
+    <option ng-repeat="genre in data.genres" value="{{genre.Key}}">{{genre.Value}}</option>
+  </select>
+  <div class="videos">
+    <div class="video" ng-repeat="video in data.videos">
+      <img src="{{video.image_url}}"/>
+      <p class="title">!!!!!!{{video.title}}</p>
+    </div>
+  </div>
+  <img class="loading" src="http://www.gifstache.com/images/ajax_loader.gif" />
+  <div class="load-more">
+    Load <input type="text" ng-model="max" /> <a class="btn btn-lg btn-success" ng-click="showMore()">More!</a>
+  </div>
+</div>
